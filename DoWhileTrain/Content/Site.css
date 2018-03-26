@@ -1,0 +1,81 @@
+﻿body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#dwtLogo {
+    font-size: 1.8em !important;
+    font-family: 'Faster One', cursive;
+    color: #1f0135d4;
+}
+
+nav {
+    background-color: #706eee;
+}
+
+section {
+    min-height: 200px;
+}
+
+.material-icons:hover {
+    transform: scale(1.2)
+}
+
+.navicon {
+    font-style: normal;
+}
+
+.renderBodyWrap {
+    margin-top: 5px;
+}
+
+.mainPageWrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.mainPageWrap>img {
+    transform: scale(0.5);
+}
+
+
+/* Training Types */
+
+.registerWrap,
+.loginWrap,
+.trainingsWrap,
+.trainingTypesWrap {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* Trainings */
+
+.trainbox {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+}
+
+@media (max-width: 550px) {
+    #dwtLogo {
+        font-size: 1.2em !important;
+        left: 155px;
+    }
+    /* Training Types */
+    #btnCreateTrainingType {
+        width: 100%
+    }
+    section {
+        min-height: 50px;
+    }
+}
