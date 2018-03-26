@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoWhileTraining</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <!-- <link href="https://cdn3.devexpress.com/jslib/17.2.7/css/dx.common.css"  rel="stylesheet">
+    <link href="https://cdn3.devexpress.com/jslib/17.2.7/css/dx.spa.css"  rel="stylesheet">
+    <link href="https://cdn3.devexpress.com/jslib/17.2.7/css/dx.light.css"  rel="stylesheet"> -->
+</head>
+<body>
+    <!-- MASTER NAVIGATION -->
+    <nav>
+        <div class="nav-wrapper">
+            <a id="dwtLogo" href="#!" class="brand-logo">Do While Training</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li>@Html.ActionLink("Главная страница", "Index", "Home")</li>
+                @if (Request.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("Тренировка", "Trainings", "Home")</li>
+                    <li>@Html.ActionLink("Мои тренажеры", "TrainingApparatus", "Home")</li>
+                    <li>@Html.ActionLink("Мои тренировки", "TrainingTypes", "Home")</li>
+                }
+
+                <li>@Html.Partial("_LoginPartial")</li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-nav">
+        <li>@Html.ActionLink("Главная страница", "Index", "Home")</li>
+        @if (Request.IsAuthenticated)
+        {
+            <li>@Html.ActionLink("Тренировка", "Trainings", "Home")</li>
+            <li>@Html.ActionLink("Мои тренажеры", "TrainingApparatus", "Home")</li>
+            <li>@Html.ActionLink("Мои тренировки", "TrainingTypes", "Home")</li>
+        }
+
+        <li>@Html.Partial("_LoginPartial")</li>
+    </ul>
+    <!-- *** -->
+    <!-- RENDER BODY SECTION -->
+    <div class="renderBodyWrap">
+        @RenderBody()
+        <hr />
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Полезные ссылки</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="https://vk.com/dimaneal">Связь с разработчиком</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <p>&copy; @DateTime.Now.Year - DWT</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- *** -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/materialize")
+    @RenderSection("scripts", false)
+    <script defer>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
+</html>
